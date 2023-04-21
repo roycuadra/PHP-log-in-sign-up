@@ -1,6 +1,10 @@
-![Login and Signup System](login-signup.png)
 
-# Log In and Sign Up System using PHP
+
+# Log In and Sign Up System using 
+
+![PHP](https://img.shields.io/badge/PHP-%3C%2F%3E-777BB4?logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-%3C%2F%3E-4479A1?logo=mysql&logoColor=white)
+
 
 This is a simple log in and sign up system using PHP, designed to provide a basic authentication mechanism for web applications. It allows users to register for an account, log in with their credentials, and securely log out when they are done.
 
