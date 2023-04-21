@@ -1,3 +1,5 @@
+![Login and Signup System](login-signup.png)
+
 # Log In and Sign Up System using PHP
 
 This is a simple log in and sign up system using PHP, designed to provide a basic authentication mechanism for web applications. It allows users to register for an account, log in with their credentials, and securely log out when they are done.
