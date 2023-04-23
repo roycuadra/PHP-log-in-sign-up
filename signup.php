@@ -19,7 +19,7 @@
   <div class="login_form_container">
     <div class="login_form">
       <h2>Sign Up</h2>
-      <form method="post">
+      <form method="post" onsubmit=" Form()">
         <div class="input_group">
           <i class="material-symbols-outlined">person</i>
           <input type="text" placeholder="Username" class="input_text" id="username" name="user_name" autocomplete="off">
@@ -28,10 +28,20 @@
           <i class="material-symbols-outlined">lock</i>
           <input type="password" placeholder="Password" class="input_text" id="password" name="password" autocomplete="off">
         </div>
-        <p style="color: #00ccff;text-align: center;margin-top:5px;" id="message"></p>
+        <p id="message" style="text-align:center;"></p>
+
+        <div class="input_group">
+          <i class="material-symbols-outlined">lock</i>
+          <input type="password" placeholder="Confirm-Password" class="input_text" id="cpassword" name="cpassword" autocomplete="off">
+          
+          
+       
+        </div>
+        <p id="cmessage" style="text-align:center;"></p>
 
         <div class="button-center">
           <input id="login_button" type="submit" name="log" value="Sign Up">
+          <p style="color: #00ccff;text-align: center;margin-top:1px;" id="message"></p>
 
         </div>
 		
@@ -43,6 +53,31 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="./main.js"></script>
+  <script>
+    function Form() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("cpassword").value;
+      var message = "Password do not match";
+      var cmessage = "Password do not match";
+     
+      if (username === "" || password === "" || confirmPassword === "") {
+        alert("Please fill in all fields.");
+        return false;
+      } else if (password !== confirmPassword) {
+        document.getElementById("message").innerHTML = message;
+        document.getElementById("cmessage").innerHTML = cmessage;
+        document.getElementById("message").style.color = "red";
+        document.getElementById("cmessage").style.color = "red";
+
+        return false;
+      } else {
+        alert("Registered Successfully!!")
+        return false;
+      }
+    }
+    
+  </script>
 </body>
 
 </html>
@@ -64,7 +99,7 @@ session_start();
 		{
 
 			//save to database
-			$user_id = random_num(20);
+			$user_id = random_num(1);
 			$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
 
 			mysqli_query($con, $query);
